@@ -3,14 +3,14 @@
   "version": "0.0.0",
   "description": "acronym in Javascript.",
   "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
     "babel-eslint": "^10.0.1",
-    "babel-jest": "^23.6.0",
-    "babel-plugin-transform-builtin-extend": "^1.1.2",
-    "babel-preset-env": "^1.7.0",
-    "eslint": "^5.12.1",
+    "babel-jest": "^24.9.0",
+    "eslint": "^6.6.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.15.0",
-    "jest": "^23.6.0"
+    "jest": "^24.9.0"
   },
   "jest": {
     "modulePathIgnorePatterns": [
@@ -20,7 +20,7 @@
   "babel": {
     "presets": [
       [
-        "env",
+        "@babel/preset-env",
         {
           "targets": [
             {
@@ -29,26 +29,13 @@
           ]
         }
       ]
-    ],
-    "plugins": [
-      [
-        "babel-plugin-transform-builtin-extend",
-        {
-          "globals": [
-            "Error"
-          ]
-        }
-      ],
-      [
-        "transform-regenerator"
-      ]
     ]
   },
   "scripts": {
-    "test": "jest --no-cache ./*",
-    "watch": "jest --no-cache --watch ./*",
+    "test": "jest --no-cache ./*.spec.js",
+    "watch": "jest --no-cache --watch ./*.spec.js",
     "lint": "eslint .",
-    "lint-test": "eslint . && jest --no-cache ./* "
+    "lint-test": "eslint . && jest --no-cache ./*.spec.js "
   },
   "eslintConfig": {
     "parser": "babel-eslint",
@@ -68,7 +55,5 @@
       "import/prefer-default-export": "off",
       "import/no-default-export": "off"
     }
-  },
-  "license": "MIT",
-  "dependencies": {}
+  }
 }
