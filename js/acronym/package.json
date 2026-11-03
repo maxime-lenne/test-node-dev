@@ -3,14 +3,14 @@
   "version": "0.0.0",
   "description": "acronym in Javascript.",
   "devDependencies": {
-    "@babel/core": "^7.7.2",
-    "@babel/preset-env": "^7.7.1",
-    "babel-eslint": "^10.0.1",
-    "babel-jest": "^24.9.0",
-    "eslint": "^6.6.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.15.0",
-    "jest": "^24.9.0"
+    "@babel/core": "^7.29.0",
+    "@babel/eslint-parser": "^7.28.0",
+    "@babel/preset-env": "^7.29.0",
+    "babel-jest": "^30.5.2",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.32.0",
+    "jest": "^30.5.2"
   },
   "jest": {
     "modulePathIgnorePatterns": [
@@ -22,11 +22,9 @@
       [
         "@babel/preset-env",
         {
-          "targets": [
-            {
-              "node": "current"
-            }
-          ]
+          "targets": {
+            "node": "current"
+          }
         }
       ]
     ]
@@ -38,10 +36,11 @@
     "lint-test": "eslint . && jest --no-cache ./*.spec.js "
   },
   "eslintConfig": {
-    "parser": "babel-eslint",
+    "parser": "@babel/eslint-parser",
     "parserOptions": {
-      "ecmaVersion": 7,
-      "sourceType": "module"
+      "ecmaVersion": 2022,
+      "sourceType": "module",
+      "requireConfigFile": false
     },
     "env": {
       "es6": true,
